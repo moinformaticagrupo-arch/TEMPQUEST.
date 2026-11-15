@@ -21,7 +21,7 @@ try {
       $q->execute([$scenario,$t,$h,$c,$t,$h,$c,$off ? 'true' : 'false']);
     } elseif($action==='personalizado') {
       $t=filter_var($in['temperatura']??null,FILTER_VALIDATE_INT); $h=filter_var($in['humedad']??null,FILTER_VALIDATE_INT); $c=filter_var($in['cpu']??null,FILTER_VALIDATE_INT);
-      if($t===false||$t<15||$t>45||$h===false||$h<20||$h>90||$c===false||$c<5||$c>100) reply(['ok'=>false,'error'=>'Valores fuera de rango.'],400);
+      if($t===false||$t<15||$t>80||$h===false||$h<20||$h>90||$c===false||$c<5||$c>100) reply(['ok'=>false,'error'=>'Valores fuera de rango.'],400);
       $q=$conexion->prepare("UPDATE public.simulacion_estado SET activa=TRUE, escenario='personalizado', temperatura=?, humedad=?, cpu=?, temp_base=?, hum_base=?, cpu_base=?, nodo_offline=FALSE, actualizado=NOW(), ultimo_tick=NOW() WHERE id=1");
       $q->execute([$t,$h,$c,$t,$h,$c]);
     } else reply(['ok'=>false,'error'=>'Acción desconocida.'],400);
