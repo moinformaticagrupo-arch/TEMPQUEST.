@@ -905,7 +905,7 @@ async function cargarDatosMySQL() {
             const dewPoint = (currentTemp - ((100 - rh) / 5)).toFixed(1);
             document.getElementById('dew-point-val').innerText = dewPoint + ' °C';
 
-            let pointerPercent = ((currentTemp - 15) / (45 - 15)) * 100;
+            let pointerPercent = ((currentTemp - 15) / (80 - 15)) * 100;
             pointerPercent = Math.max(0, Math.min(100, pointerPercent));
             document.getElementById('ashrae-pointer').style.left = pointerPercent + '%';
 
@@ -989,7 +989,7 @@ async function cargarDatosMySQL() {
                     plugins: { legend: { display: false } },
                     scales: {
                         x: { grid: { color: 'rgba(255, 255, 255, 0.05)' }, ticks: { color: '#64748b', font: { size: 10 } } },
-                        y: { min: 15, max: 45, grid: { color: 'rgba(255, 255, 255, 0.05)' }, ticks: { color: '#64748b', font: { size: 10 } } }
+                        y: { min: 15, max: 80, grid: { color: 'rgba(255, 255, 255, 0.05)' }, ticks: { color: '#64748b', font: { size: 10 } } }
                     }
                 }
             });
