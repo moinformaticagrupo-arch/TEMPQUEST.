@@ -1,0 +1,8 @@
+NEXUS NOC PARA GITHUB + RENDER + SUPABASE
+
+1) Ejecuta schema_postgres.sql en el SQL Editor de Supabase.
+2) Sube esta carpeta a un repo GitHub.
+3) Conecta el repo a Render como Blueprint/Web Service Docker.
+4) Configura variables privadas DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD, DB_SSLMODE=require y CONTROL_TOKEN.
+5) Abre GUIA_RENDER_SUPABASE.md y PRUEBAS_SQL.md para instrucciones detalladas y pruebas manuales.
+No subas credenciales ni claves al repositorio.
